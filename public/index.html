@@ -4,26 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <title>Robo School</title>
   </head>
   <body>
-    <div style="padding: 2rem; max-width: 720px; margin: 0 auto">
-      <img src="/static/img/webpack.svg" style="width: 100%; max-width: 400px; height: auto" />
-      <div style="font-size: 1.75rem">It works!</div>
+    <header class="header">
+      <div class="container container--wide">
+        <div>Hello world</div>
+        <div class="header__inner">
+          <a class="header__logo logo" href="#">логотип</a>
+          <nav class="nav header__nav">
+            <a href="#" class="nav__link header__link"></a>
+            <a href="#" class="nav__link header__link"></a>
+            <a href="#" class="nav__link header__link"></a>
+          </nav>
+          <a href="#" class="header__phone phone">телефон</a>
+        </div>
+      </div>
+    </header>
 
-      <!-- pages list -->
-      <!-- based on `webpack-pages.js` -->
-      <ul style="padding: 1rem">
-        <li style="padding-bottom: 0.5rem">
-          <a href="/" style="color: blue">Home page (active)</a>
-        </li>
-        <li style="padding-bottom: 0.5rem">
-          <a href="/about.html" style="color: blue">About page</a>
-        </li>
-        <li style="padding-bottom: 0.5rem">
-          <a href="https://github.com/vedees/webpack-template/blob/webpack5/README.md" target="_blank" style="color: blue">Documentation</a>
-        </li>
-      </ul>
-    </div>
+    <main>
+      <div class="container">
+        <section class="hero">
+          <button class="btn" name="signUp">кнопка</button>
+        </section>
+
+        <section class="sale">
+          <button class="btn btn--dark" name="submitAnApplication">кнопка</button>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container container--wide">Footer</div>
+    </footer>
   </body>
 </html>

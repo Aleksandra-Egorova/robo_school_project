@@ -1,0 +1,88 @@
+//глобальные цвета:
+$text-color-primary: #141024;
+$text-color-secondary: #fff;
+$bg-color-tertiary: #D52027;
+$button-color-primary-hover: #be2027;
+$bg-color-primary: #141024;
+$button-color-secondary-hover: #7e0411;
+
+
+body,
+html {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  line-height: 1.6;
+  color: $text-color-primary;
+  font-weight: 400;
+}
+
+section {
+  padding: 120px 0;
+}
+
+//контейнер для основного контента и контейнер для шапки и футера
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+
+  &--wide {
+    max-width: 1760px;
+    color: $text-color-secondary;
+
+    a {
+      color: $text-color-secondary;
+    }
+  }
+}
+
+//логотип
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+//телефон
+.phone {
+  font-size: 30px;
+  font-weight: 7600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+//модификатор для кнопок
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 54px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: $bg-color-tertiary;
+  border-radius: 5px;
+  color: $text-color-secondary;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-color-primary-hover;
+  }
+
+  &--dark {
+    background-color: $bg-color-primary;
+
+    &:hover {
+      background-color: $button-color-secondary-hover;
+    }
+  }
+}
+
+header,
+footer {
+  background-color: $bg-color-primary;
+}
