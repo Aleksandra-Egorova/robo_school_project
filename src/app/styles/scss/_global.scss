@@ -1,11 +1,4 @@
-//глобальные цвета:
-$text-color-primary: #141024;
-$text-color-secondary: #fff;
-$bg-color-tertiary: #D52027;
-$button-color-primary-hover: #be2027;
-$bg-color-primary: #141024;
-$button-color-secondary-hover: #7e0411;
-
+@import './variables';
 
 body,
 html {
@@ -22,7 +15,6 @@ section {
   padding: 120px 0;
 }
 
-//контейнер для основного контента и контейнер для шапки и футера
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -32,31 +24,25 @@ section {
 
   &--wide {
     max-width: 1760px;
-    color: $text-color-secondary;
-
-    a {
-      color: $text-color-secondary;
-    }
   }
 }
 
-//логотип
 .logo {
   font-size: 30px;
   font-weight: 700;
+  color: $text-color-secondary;
 }
 
-//телефон
 .phone {
   font-size: 30px;
-  font-weight: 7600;
+  font-weight: 600;
+  color: $text-color-secondary;
 
   &:hover {
     text-decoration: underline;
   }
 }
 
-//модификатор для кнопок
 .btn {
   display: inline-flex;
   justify-content: center;
