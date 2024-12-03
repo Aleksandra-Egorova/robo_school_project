@@ -24,22 +24,19 @@ section {
 
   &--wide {
     max-width: 1760px;
-    color: $text-color-secondary;
-
-    a {
-      color: $text-color-secondary;
-    }
   }
 }
 
 .logo {
   font-size: 30px;
   font-weight: 700;
+  color: $text-color-secondary;
 }
 
 .phone {
   font-size: 30px;
   font-weight: 600;
+  color: $text-color-secondary;
 
   &:hover {
     text-decoration: underline;
