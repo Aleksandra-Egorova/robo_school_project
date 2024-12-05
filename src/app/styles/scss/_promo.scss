@@ -6,7 +6,7 @@
   height: calc(100dvh - 108px);
   overflow: hidden;
   padding: 0;
-  max-height: 974px;
+  max-height: 972px;
 
   &__content {
     display: flex;
@@ -30,15 +30,13 @@
     max-width: 478px;
     margin-top: 20px;
   }
-}
 
-.promo {
   &__img {
     position: absolute;
     width: 783px;
     height: auto;
-    top: 10%;
-    left: 50%;
+    top: 54px;
+    left: 48%;
   }
 
   &__btn {

@@ -11,20 +11,20 @@
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-  }
-}
 
-.menu {
-  &__list {
-    display: flex;
-    gap: 40px;
-  }
-  &__link {
-    font-size: 20px;
-    color: $text-color-secondary;
+    .menu {
+      &__list {
+        display: flex;
+        gap: 40px;
+      }
+      &__link {
+        font-size: 20px;
+        color: $text-color-secondary;
 
-    &:hover {
-      text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
