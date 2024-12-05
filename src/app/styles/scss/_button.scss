@@ -1,0 +1,26 @@
+@import './variables';
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 54px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: $bg-color-tertiary;
+  border-radius: 5px;
+  color: $text-color-secondary;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-color-primary-hover;
+  }
+
+  &--dark {
+    background-color: $bg-color-primary;
+
+    &:hover {
+      background-color: $button-color-secondary-hover;
+    }
+  }
+}

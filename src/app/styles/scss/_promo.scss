@@ -1,0 +1,45 @@
+@import './variables';
+
+.promo {
+  position: relative;
+  background-color: $bg-color-primary;
+  height: calc(100dvh - 108px);
+  overflow: hidden;
+  padding: 0;
+  max-height: 972px;
+
+  &__content {
+    display: flex;
+    height: 100%;
+  }
+
+  &__info {
+    color: $text-color-secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 238px;
+  }
+
+  &__title {
+    font-size: 70px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    max-width: 478px;
+    margin-top: 20px;
+  }
+
+  &__img {
+    position: absolute;
+    width: 783px;
+    height: auto;
+    top: 54px;
+    left: 48%;
+  }
+
+  &__btn {
+    margin-top: 50px;
+  }
+}
