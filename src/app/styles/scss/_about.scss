@@ -1,0 +1,33 @@
+@import './variables';
+.about {
+  &__desc {
+    max-width: 891px;
+    font-size: 30px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column; 
+    flex-basis: 260px; 
+
+    &-number {
+      font-size: 70px;
+      font-weight: 600;
+      color: $text-color-additional;
+      white-space: nowrap; 
+    }
+
+    &-text {
+      font-size: 18px;
+      color: $text-color-pale;
+    }
+  }
+}
