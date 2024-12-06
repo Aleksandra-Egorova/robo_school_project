@@ -15,7 +15,7 @@
 
   &__item {
     display: flex;
-    flex-direction: column; 
+    flex-wrap: wrap; 
     flex-basis: 260px; 
 
     &-number {
