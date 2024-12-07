@@ -1,4 +1,5 @@
 @import './variables';
+
 .about {
   &__desc {
     max-width: 891px;
@@ -15,7 +16,7 @@
 
   &__item {
     display: flex;
-    flex-wrap: wrap; 
+    flex-direction: column;
     flex-basis: 260px; 
 
     &-number {
