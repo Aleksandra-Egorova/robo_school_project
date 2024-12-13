@@ -12,21 +12,37 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__item {
-    width: 360px;
-    flex: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 360px;
 
     &-img {
+      flex: 1 0 500px;
       width: 360px;
       height: auto;
+      border-radius: 20px;
+      object-fit: cover;
     }
   }
 
   &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100%;
+
     &__name {
       font-size: 24px;
+      font-weight: 600;
       margin-top: 20px;
     }
 
@@ -57,7 +73,7 @@
       border-radius: 40px;
       background-color: $scrollbar-bg-pale;
 
-      &__item {
+      &__element {
         position: absolute;
         height: 5px;
         width: 260px;
