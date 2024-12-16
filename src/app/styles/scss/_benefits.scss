@@ -1,6 +1,7 @@
 @import './variables';
 
 .benefits {
+  background-color: $bg-color-secondary;
   &__title {
     font-size: 50px;
     max-width: 682px;
