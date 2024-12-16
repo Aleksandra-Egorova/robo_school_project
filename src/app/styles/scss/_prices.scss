@@ -1,0 +1,90 @@
+@import './variables';
+
+.prices {
+  &__title {
+    font-size: 50px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex-basis: 360px;
+      border: 1px solid $card-shadow;
+      box-shadow: 0 4px 4px $card-shadow;
+      border-radius: 20px;
+      padding: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: $bg-color-primary;
+        transform: scale(1.1);
+        color: $text-color-secondary;
+
+        :before,
+        :after {
+          background-color: $bg-color-white;
+        }
+      }
+
+      &__heading {
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 600;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: '';
+          top: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 3px;
+          background-color: $bg-color-primary;
+          transition: background-color 0.3s ease;
+        }
+
+        &::before {
+          left: -30px;
+        }
+
+        &::after {
+          right: -30px;
+        }
+      }
+
+      &__info {
+        margin-bottom: 52px;
+        text-align: center;
+
+        &__price {
+          font-size: 50px;
+          font-weight: 600;
+          margin-top: 63px;
+        }
+
+        &__desc {
+          font-size: 18px;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+
+      &__btn {
+        align-self: stretch;
+        margin-top: auto;
+      }
+    }
+  }
+}
