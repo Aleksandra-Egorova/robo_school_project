@@ -203,13 +203,67 @@
         </div>
       </section>
 
-      <section class="sale">
-        <button class="btn btn--dark" name="submitAnApplication">кнопка</button>
+      <section class="application">
+        <div class="container">
+          <div class="application__items">
+            <div class="application__item">
+              <h2 class="application__item__title">Запишитесь на курс со скидкой 10%</h2>
+              <p class="application__item__desc">Акция действительна до 10 марта 2022 года</p>
+            </div>
+            <div class="application__item">
+              <form class="application__item__form form" action="" method="post">
+                
+                <label for="name" class="form_label">Введите имя</label>
+                <input 
+                class="form__name" 
+                type="text" 
+                id="name" 
+                name="user_name" 
+                placeholder="Имя" 
+                required 
+                title="Имя должно содержать только буквы русского или латинского алфавита"
+                pattern="[A-Za-zА-Яа-яЁё]{2,}">
+
+                <label for="phone" class="form_label">Введите номер телефона</label>
+                <input 
+                class="form__phone" 
+                type="tel" 
+                id="phone" 
+                name="user_phone" 
+                placeholder="Телефон" 
+                required
+                minlength="11"
+                maxlength="17"
+                title="Номер телефона не должен содержать букв"
+                pattern="\+?[0-9\s\-\(\)]+">
+
+                <label for="mail" class="form_label">Введите E-mail</label>
+                <input 
+                class="form__email" 
+                type="email" 
+                id="mail" 
+                name="user_email" 
+                placeholder="E-mail" 
+                required>
+
+                <button class="form__btn btn btn--dark" type="submit">Оформить заявку</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container container--wide">Footer</div>
+    <footer class="footer">
+      <div class="container container--wide">
+        <div class="footer__content">
+          <div class="footer__info">
+            <a href="/" class="footer__info__logo logo" title="Главная">ROBO.SCHOOL</a>
+            <a href="tel:+78000001122" class="footer__info__phone phone">+7 800 000 11 22</a>
+          </div>
+          <p class="footer__copyright">© ROBO.SCHOOL</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
