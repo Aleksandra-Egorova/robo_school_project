@@ -1,0 +1,52 @@
+@import './variables';
+
+.application {
+  padding: 87px 0;
+  background-color: $bg-color-tertiary;
+  background-image: url(/src/shared/img/icons/back_application.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    &__title {
+      font-size: 36px;
+      color: $text-color-secondary;
+      max-width: 476px;
+      line-height: 1.3;
+      margin-top: 20px;
+    }
+
+    &__desc {
+      font-size: 20px;
+      color: $text-color-secondary;
+      line-height: 1.3;
+      margin-top: 20px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      max-width: 500px;
+      gap: 10px;
+
+      input {
+        border-radius: 5px;
+        background-color: $bg-color-form;
+        padding: 19px 20px;
+        font-size: 18px;
+      }
+
+      &__btn {
+        padding: 19px 20px;
+      }
+    }
+  }
+}
