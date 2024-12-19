@@ -18,8 +18,8 @@
       justify-content: space-between;
       align-items: center;
       flex-basis: 360px;
-      border: 1px solid $card-shadow;
-      box-shadow: 0 4px 4px $card-shadow;
+      border: 1px solid $border-color;
+      box-shadow: 0 4px 4px $border-color-shadow;
       border-radius: 20px;
       padding: 40px;
       cursor: pointer;
@@ -32,7 +32,7 @@
 
         :before,
         :after {
-          background-color: $bg-color-white;
+          background-color: $bg-color-quaternary;
         }
       }
 
