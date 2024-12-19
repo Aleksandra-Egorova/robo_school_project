@@ -18,8 +18,8 @@
       justify-content: space-between;
       align-items: center;
       flex-basis: 360px;
-      border: 1px solid $border-color;
-      box-shadow: 0 4px 4px $border-color-shadow;
+      border: $border-default;
+      box-shadow: $shadow-dark;
       border-radius: 20px;
       padding: 40px;
       cursor: pointer;
