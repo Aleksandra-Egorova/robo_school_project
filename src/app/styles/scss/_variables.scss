@@ -1,30 +1,33 @@
-$primary-color: #141024;
-$secondary-color: #FFFFFF;
-$tertiary-color: #D52027;
+$black-color: #141024;
+$white-color: #FFFFFF; 
+$accent-color: #D52027; 
 
-$text-color-primary: $primary-color;
+$text-color-primary: $black-color;
 $text-color-primary-70: #141024b3; 
-$text-color-secondary: $secondary-color;
-$text-color-tertiary: $tertiary-color; 
+$text-color-secondary: $white-color;
+$text-color-tertiary: $accent-color; 
 
-$bg-color-primary: $primary-color;
-$bg-color-primary-8: #14102414;
+$bg-color-primary: $black-color;
+$bg-color-primary-08: #14102414;
 $bg-color-secondary: #F9F9F9;
-$bg-color-tertiary: $tertiary-color;
-$bg-color-quaternary: $secondary-color; 
+$bg-color-tertiary: $accent-color;
+$bg-color-quaternary: $white-color; 
 
-$button-color-primary: $tertiary-color;
+$button-color-primary: $accent-color;
 $button-color-primary-hover: #be2027;
-$button-color-secondary: $primary-color;
+$button-color-secondary: $black-color;
 $button-color-secondary-hover: #7e0411;
 
-$tooltip-shadow: #1410241a;
-
-$scrollbar-bg-color: $bg-color-primary-8; 
-$scrollbar-bg-color-element: $primary-color;
+$scrollbar-bg-color: $bg-color-primary-08; 
+$scrollbar-bg-color-element: $black-color;
 
 $border-color: #14102433;
-$border-color-shadow: #00000040; 
+$border-default: 1px solid $border-color;
+
+$shadow-color-light: #1410241a;
+$shadow-color-dark: #00000040;
+$shadow-light: 0px 2px 8px $shadow-color-light;
+$shadow-dark: 0 4px 4px $shadow-color-dark;
 
 $input-bg-color: #F6F6F6;
 
