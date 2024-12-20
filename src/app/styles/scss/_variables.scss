@@ -1,11 +1,12 @@
 $black-color: #141024;
+$black-color-70: #141024b3;
 $white-color: #FFFFFF; 
 $accent-color: #D52027; 
 
 $text-color-primary: $black-color;
-$text-color-primary-70: #141024b3; 
-$text-color-secondary: $white-color;
-$text-color-tertiary: $accent-color; 
+$text-color-secondary: $black-color-70; 
+$text-color-white: $white-color; 
+$text-color-accent: $accent-color; 
 
 $bg-color-primary: $black-color;
 $bg-color-primary-08: #14102414;

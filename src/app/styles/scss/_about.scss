@@ -22,13 +22,13 @@
     &-number {
       font-size: 70px;
       font-weight: 600;
-      color: $text-color-tertiary;
+      color: $text-color-accent;
       white-space: nowrap; 
     }
 
     &-text {
       font-size: 18px;
-      color: $text-color-primary-70;
+      color: $text-color-secondary;
     }
   }
 }
