@@ -18,8 +18,8 @@
       justify-content: space-between;
       align-items: center;
       flex-basis: 360px;
-      border: 1px solid $card-shadow;
-      box-shadow: 0 4px 4px $card-shadow;
+      border: $border-default;
+      box-shadow: $shadow-dark;
       border-radius: 20px;
       padding: 40px;
       cursor: pointer;
@@ -28,11 +28,11 @@
       &:hover {
         background-color: $bg-color-primary;
         transform: scale(1.1);
-        color: $text-color-secondary;
+        color: $text-color-white;
 
         :before,
         :after {
-          background-color: $bg-color-white;
+          background-color: $bg-color-quaternary;
         }
       }
 

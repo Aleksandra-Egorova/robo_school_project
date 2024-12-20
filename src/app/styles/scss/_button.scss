@@ -7,9 +7,9 @@
   padding: 25px 54px;
   cursor: pointer;
   font-size: 18px;
-  background-color: $bg-color-tertiary;
+  background-color: $button-color-primary;
   border-radius: 5px;
-  color: $text-color-secondary;
+  color: $text-color-white;
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -17,7 +17,7 @@
   }
 
   &--dark {
-    background-color: $bg-color-primary;
+    background-color: $button-color-secondary;
 
     &:hover {
       background-color: $button-color-secondary-hover;
