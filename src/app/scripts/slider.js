@@ -1,36 +1,41 @@
-const teachersItems = document.querySelector('.teachers__items');
-const slideButtons = document.querySelectorAll('.controls-buttons__arrow');
-const sliderScrollBar = document.querySelector('.teachers__controls-scrollbar');
-const scrollBarThumb = sliderScrollBar.querySelector('.teachers__controls-scrollbar__thumb');
-let maxScrollLeft = teachersItems.scrollWidth - teachersItems.clientWidth;
+const slider = document.querySelector('.teachers__items'); 
+const sliderButtons = document.querySelectorAll('.controls-buttons__arrow'); 
+const sliderScrollBar = document.querySelector('.teachers-controls__scrollbar');
+const scrollBarThumb = sliderScrollBar.querySelector('.teachers-controls__thumb');
 
-slideButtons.forEach(button => {
-  button.addEventListener('click', () => {
+let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
+scrollBarThumb.style.width = `${(slider.clientWidth/slider.scrollWidth) * 100}%`; 
+
+sliderButtons.forEach(button => {
+  button.addEventListener('click', () => { 
     const direction = button.id === 'btn-prev' ? -1 : 1;
-    let scrollAmount = 3 * sliderScrollBar.clientWidth * direction;
-    teachersItems.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    let scrollAmount = sliderScrollBar.clientWidth * direction; 
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); 
   });
 });
 
-const scrollThumbPosition = () => {
-  const scrollPosition = teachersItems.scrollLeft;
-  const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollBar.clientWidth - scrollBarThumb.offsetWidth);
+const updateThumbPosition = () => { 
+  const scrollPosition = slider.scrollLeft;
+  const thumbPosition = (scrollPosition / sliderMaxScrollLeft) * (sliderScrollBar.clientWidth - scrollBarThumb.offsetWidth);
+
   scrollBarThumb.style.left = `${thumbPosition}px`;
 };
 
-scrollBarThumb.addEventListener('mousedown', e => {
-  const startX = e.clientX;
+slider.addEventListener('scroll', updateThumbPosition);
+
+scrollBarThumb.addEventListener('mousedown', (event) => {
+  const startX = event.clientX; 
   const thumbPosition = scrollBarThumb.offsetLeft;
 
-  const handleMouseMove = e => {
-    const deltaX = e.clientX - startX;
+  const handleMouseMove = event => {
+    const deltaX = event.clientX - startX;
     const newThumbPosition = thumbPosition + deltaX;
     const maxThumbPosition = sliderScrollBar.offsetWidth - scrollBarThumb.offsetWidth;
     const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
-    const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+    const scrollPosition = (boundedPosition / maxThumbPosition) * sliderMaxScrollLeft;
 
     scrollBarThumb.style.left = `${boundedPosition}px`;
-    teachersItems.scrollLeft = scrollPosition;
+    slider.scrollLeft = scrollPosition; 
   };
 
   const handleMouseUp = () => {
@@ -42,19 +47,7 @@ scrollBarThumb.addEventListener('mousedown', e => {
   document.addEventListener('mouseup', handleMouseUp);
 });
 
-teachersItems.addEventListener('scroll', () => {
-  scrollThumbPosition();
-});
-
 window.addEventListener('resize', () => {
-  maxScrollLeft = teachersItems.scrollWidth - teachersItems.clientWidth;
-  scrollBarThumb.style.width = `${(teachersItems.clientWidth / teachersItems.scrollWidth) * 100}%`;
-
-  slideButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const direction = button.id === 'btn-prev' ? -1 : 1;
-      let scrollAmount = sliderScrollBar.clientWidth * direction;
-      teachersItems.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-  });
+  sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth; 
+  scrollBarThumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
 });
