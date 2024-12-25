@@ -1,6 +1,8 @@
 @import './variables';
 
 .teachers {
+  padding-bottom: 0;
+  
   &__title {
     font-size: 50px;
   }
@@ -10,7 +12,6 @@
     gap: 40px;
     margin-top: 60px;
     overflow-x: auto;
-    scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
@@ -58,40 +59,39 @@
     }
   }
 
-  &__controls {
+  &-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 77px;
     cursor: pointer;
 
-    &-scrollbar {
+    &__scrollbar {
       position: relative;
       height: 5px;
       width: 360px;
       border-radius: 40px;
       background-color: $scrollbar-bg-color;
+    }
+    &__thumb {
+      position: absolute;
+      cursor: grab;
+      height: 5px;
+      width: 260px;
+      border-radius: 40px;
+      background-color: $scrollbar-bg-color-thumb;
 
-      &__thumb {
+      &::after {
+        content: '';
         position: absolute;
-        cursor: grab;
-        height: 5px;
-        width: 260px;
-        border-radius: 40px;
-        background-color: $scrollbar-bg-color-thumb;
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: -10px;
-          bottom: -10px;
-        }
+        left: 0;
+        right: 0;
+        top: -10px;
+        bottom: -10px;
       }
     }
 
-    &-buttons {
+    &__buttons {
       gap: 10px;
       height: 34px;
 
