@@ -1,40 +1,40 @@
 const slider = document.querySelector('.teachers__items'); 
 const sliderButtons = document.querySelectorAll('.controls-buttons__arrow'); 
-const sliderScrollBar = document.querySelector('.teachers-controls__scrollbar');
-const scrollBarThumb = sliderScrollBar.querySelector('.teachers-controls__thumb');
+const sliderScrollbar = document.querySelector('.teachers-controls__scrollbar');
+const scrollbarThumb = sliderScrollbar.querySelector('.teachers-controls__thumb');
 
 let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
-scrollBarThumb.style.width = `${(slider.clientWidth/slider.scrollWidth) * 100}%`; 
+scrollbarThumb.style.width = `${(slider.clientWidth/slider.scrollWidth) * 100}%`; 
 
 sliderButtons.forEach(button => {
   button.addEventListener('click', () => { 
     const direction = button.id === 'btn-prev' ? -1 : 1;
-    let scrollAmount = sliderScrollBar.clientWidth * direction; 
+    let scrollAmount = sliderScrollbar.clientWidth * direction; 
     slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); 
   });
 });
 
 const updateThumbPosition = () => { 
   const scrollPosition = slider.scrollLeft;
-  const thumbPosition = (scrollPosition / sliderMaxScrollLeft) * (sliderScrollBar.clientWidth - scrollBarThumb.offsetWidth);
+  const thumbPosition = (scrollPosition / sliderMaxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
 
-  scrollBarThumb.style.left = `${thumbPosition}px`;
+  scrollbarThumb.style.left = `${thumbPosition}px`;
 };
 
 slider.addEventListener('scroll', updateThumbPosition);
 
-scrollBarThumb.addEventListener('mousedown', (event) => {
+scrollbarThumb.addEventListener('mousedown', (event) => {
   const startX = event.clientX; 
-  const thumbPosition = scrollBarThumb.offsetLeft;
+  const thumbPosition = scrollbarThumb.offsetLeft;
 
   const handleMouseMove = event => {
     const deltaX = event.clientX - startX;
     const newThumbPosition = thumbPosition + deltaX;
-    const maxThumbPosition = sliderScrollBar.offsetWidth - scrollBarThumb.offsetWidth;
+    const maxThumbPosition = sliderScrollbar.offsetWidth - scrollbarThumb.offsetWidth;
     const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
     const scrollPosition = (boundedPosition / maxThumbPosition) * sliderMaxScrollLeft;
 
-    scrollBarThumb.style.left = `${boundedPosition}px`;
+    scrollbarThumb.style.left = `${boundedPosition}px`;
     slider.scrollLeft = scrollPosition; 
   };
 
@@ -49,5 +49,5 @@ scrollBarThumb.addEventListener('mousedown', (event) => {
 
 window.addEventListener('resize', () => {
   sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth; 
-  scrollBarThumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
+  scrollbarThumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
 });
