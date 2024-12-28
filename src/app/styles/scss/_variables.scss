@@ -24,11 +24,13 @@ $scrollbar-bg-color-thumb: $black-color;
 
 $border-color: #14102433;
 $border-default: 1px solid $border-color;
+$border-invalid: 1px solid $black-color;
 
 $shadow-color-light: #1410241a;
 $shadow-color-dark: #00000040;
 $shadow-light: 0px 2px 8px $shadow-color-light;
 $shadow-dark: 0 4px 4px $shadow-color-dark;
+$shadow-invalid: 0px 2px 8px $white-color;
 
 $input-bg-color: #F6F6F6;
 

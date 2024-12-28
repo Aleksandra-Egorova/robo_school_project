@@ -211,20 +211,20 @@
               <p class="application__item__desc">Акция действительна до 10 марта 2022 года</p>
             </div>
             <div class="application__item">
-              <form class="application__item__form form" action="" method="post">
+              <form class="application__item__form form" id="form" action="" method="post" autocomplete="off">
                 
                 <input 
-                class="form__name" 
+                class="input" 
                 type="text" 
                 id="name" 
                 name="user_name" 
                 placeholder="Имя" 
+                minlength="2"
                 required 
-                title="Имя должно содержать только буквы русского или латинского алфавита"
-                pattern="[A-Za-zА-Яа-яЁё]{2,}">
+                autocomplete="off">
 
                 <input 
-                class="form__phone" 
+                class="input" 
                 type="tel" 
                 id="phone" 
                 name="user_phone" 
@@ -232,15 +232,15 @@
                 required
                 minlength="11"
                 maxlength="17"
-                title="Номер телефона не должен содержать букв"
-                pattern="\+?[0-9\s\-\(\)]+">
+                autocomplete="off">
 
                 <input 
-                class="form__email" 
+                class="input" 
                 type="email" 
                 id="mail" 
                 name="user_email" 
                 placeholder="E-mail" 
+                autocomplete="off"
                 required>
 
                 <button class="form__btn btn btn--dark" type="submit">Оформить заявку</button>
