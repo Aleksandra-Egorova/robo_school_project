@@ -37,11 +37,16 @@
       max-width: 500px;
       gap: 10px;
 
-      input {
+      .input {
         border-radius: 5px;
         background-color: $input-bg-color;
         padding: 19px 20px;
         font-size: 18px;
+
+        &--invalid {
+          border: $border-invalid;
+          // box-shadow: $shadow-invalid;
+        }
       }
 
       &__btn {
