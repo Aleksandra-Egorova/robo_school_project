@@ -211,37 +211,36 @@
               <p class="application__item__desc">Акция действительна до 10 марта 2022 года</p>
             </div>
             <div class="application__item">
-              <form class="application__item__form form" id="form" action="" method="post" autocomplete="off">
+              <form class="application__item__form form" id="form" action="" method="post">
                 
                 <input 
-                class="input" 
-                type="text" 
-                id="name" 
-                name="user_name" 
-                placeholder="Имя" 
-                minlength="2"
-                required 
-                autocomplete="off">
+                  class="input" 
+                  type="text" 
+                  id="name" 
+                  name="user_name" 
+                  placeholder="Имя" 
+                  pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                  minlength="2"
+                  required>
 
                 <input 
-                class="input" 
-                type="tel" 
-                id="phone" 
-                name="user_phone" 
-                placeholder="Телефон" 
-                required
-                minlength="11"
-                maxlength="17"
-                autocomplete="off">
+                  class="input" 
+                  type="tel" 
+                  id="phone" 
+                  name="user_phone" 
+                  placeholder="Телефон" 
+                  pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}"
+                  required
+                  minlength="11"
+                  maxlength="11">
 
                 <input 
-                class="input" 
-                type="email" 
-                id="mail" 
-                name="user_email" 
-                placeholder="E-mail" 
-                autocomplete="off"
-                required>
+                  class="input" 
+                  type="email" 
+                  id="mail" 
+                  name="user_email" 
+                  placeholder="E-mail" 
+                  required>
 
                 <button class="form__btn btn btn--dark" type="submit">Оформить заявку</button>
               </form>
