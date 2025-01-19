@@ -8,24 +8,26 @@ const closeModal = () => {
   modal.classList.remove('modal--open');
   document.body.classList.remove('body--noscroll');
 
-  tabsContent.forEach(tab => {
+  tabsContent.forEach((tab) => {
     tab.classList.remove('tabs-content__info--active');
   });
 
-  tabButtons.forEach(tabBtn => {
+  tabButtons.forEach((tabBtn) => { 
     tabBtn.classList.remove('nav-tabs__btn--active');
   });
 };
 
-const handleCloseModalClick = event => {
-  const isElementCloseModal = event.target === modal || event.target.closest('.modal__close-btn') || event.code === 'Escape';
+const handleCloseModalClick = (event) => {
+  const isModalCloseNeeded = event.target === modal || event.code === 'Escape';
 
-  if (!isElementCloseModal) {
+  if (!isModalCloseNeeded) {
     return;
   };
 
   closeModal();
 };
+
+closeModalBtn.addEventListener('click', closeModal);
 
 const openModal = () => {
   modal.classList.add('modal--open');
@@ -35,24 +37,24 @@ const openModal = () => {
   tabsContent[0].classList.add('tabs-content__info--active');
 };
 
-openModalBtns.forEach(button => {
+openModalBtns.forEach((button) => { 
   button.addEventListener('click', openModal);
 });
 
-tabButtons.forEach(function (tabButton) {
-  tabButton.addEventListener('click', function () {
-    tabsContent.forEach(tab => {
+tabButtons.forEach((tabButton) => { 
+  tabButton.addEventListener('click', () => { 
+    tabsContent.forEach((tab) => { 
       tab.classList.remove('tabs-content__info--active');
     });
 
-    tabButtons.forEach(tabBtn => {
+    tabButtons.forEach((tabBtn) => { 
       tabBtn.classList.remove('nav-tabs__btn--active')
     });
 
     const activeTabBtn = tabButton;
     activeTabBtn.classList.add('nav-tabs__btn--active');
 
-    const activeTabsContent = document.querySelector('#' + tabButton.dataset.tab);
+    const activeTabsContent = document.querySelector(`#${tabButton.dataset.tab}`);
     activeTabsContent.classList.add('tabs-content__info--active');
   });
 });
