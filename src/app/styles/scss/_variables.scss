@@ -14,6 +14,8 @@ $bg-color-primary-08: #14102414;
 $bg-color-secondary: #F9F9F9;
 $bg-color-tertiary: $accent-color;
 $bg-color-quaternary: $white-color; 
+$bg-color-tabs-blur: linear-gradient(#ffffff66, #fbfbfb80);
+$bg-color-modal-blackout: #00000033;
 
 $button-color-primary: $accent-color;
 $button-color-primary-hover: #be2027;
@@ -26,12 +28,12 @@ $scrollbar-bg-color-thumb: $black-color;
 $border-color: #14102433;
 $border-default: 1px solid $border-color;
 $border-invalid: 1px solid $red-color;
+$border-tabs: 1px solid #1410241c;
 
 $shadow-color-light: #1410241a;
 $shadow-color-dark: #00000040;
 $shadow-light: 0px 2px 8px $shadow-color-light;
 $shadow-dark: 0 4px 4px $shadow-color-dark;
-// $shadow-invalid: 0px 2px 8px #ff1300;
 
 $input-bg-color: #F6F6F6;
 

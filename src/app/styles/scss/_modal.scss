@@ -1,0 +1,104 @@
+@import './variables';
+
+.teacher-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 688px;
+  width: 860px;
+
+  .teacher-block {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    &__img {
+      width: 160px;
+      height: auto;
+    }
+
+    .teacher-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__name {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      &__post {
+        font-size: 18px;
+        color: $text-color-secondary;
+      }
+
+      &__socials {
+        display: flex;
+        gap: 10px;
+
+        .social-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .teacher-tabs {
+    .nav-tabs {
+      display: flex;
+      font-size: 20px;
+      border-bottom: $border-tabs;
+
+      &__btn {
+        display: flex;
+        flex: 0 1 33.333%;
+        padding: 20px 0;
+
+        &:hover {
+          color: $text-color-accent;
+        }
+
+        &--active {
+          color: $button-color-primary;
+        }
+      }
+    }
+
+    .tabs-content {
+      max-height: 370px;
+      overflow-y: scroll;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 32px;
+        bottom: 0;
+        left: 0;
+        background-image: $bg-color-tabs-blur;
+      }
+
+      &__info {
+        display: none;
+        margin-top: 20px;
+        padding-bottom: 20px;
+
+        &--active {
+          display: block;
+        }
+      }
+
+      &__text {
+        font-size: 20px;
+      }
+
+      &__title {
+        font-size: 24px;
+        margin: 40px 0 20px 0;
+      }
+    }
+  }
+}
