@@ -12,22 +12,22 @@
     justify-content: center;
     gap: 64px;
     flex-wrap: wrap;
-  }
 
-  &__item {
-    &__title {
-      font-size: 36px;
-      color: $text-color-white;
-      max-width: 476px;
-      line-height: 1.3;
-      margin-top: 20px;
-    }
+    .application__item {
+      &__title {
+        font-size: 36px;
+        color: $text-color-white;
+        max-width: 476px;
+        line-height: 1.3;
+        margin-top: 20px;
+      }
 
-    &__desc {
-      font-size: 20px;
-      color: $text-color-white;
-      line-height: 1.3;
-      margin-top: 20px;
+      &__desc {
+        font-size: 20px;
+        color: $text-color-white;
+        line-height: 1.3;
+        margin-top: 20px;
+      }
     }
 
     .form {
@@ -45,12 +45,58 @@
 
         &--invalid {
           border: $border-invalid;
-          // box-shadow: $shadow-invalid;
         }
       }
 
       &__btn {
         padding: 19px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .application {
+    padding: 40px 0;
+
+    &__items {
+      gap: 40px;
+
+      .application__item {
+        &__title {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .application {
+    background-image: none;
+
+    .application__item {
+      &__title,
+      &__desc {
+        text-align: center;
+      }
+    }
+
+    .form {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .application {
+    .application__item {
+      &__title {
+        font-size: 30px;
+      }
+      
+      &__desc {
+        font-size: 16px;
       }
     }
   }
