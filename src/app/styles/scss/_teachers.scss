@@ -3,6 +3,10 @@
 .teachers {
   padding-bottom: 0;
 
+  &__anchor-target {
+    scroll-margin-top: 20px;
+  }
+
   &__title {
     font-size: 50px;
   }
@@ -126,6 +130,7 @@
     }
 
     &__items {
+      padding: 0 10px;
       gap: 20px;
       margin-top: 40px;
       margin-left: -10px;
@@ -133,10 +138,10 @@
     }
 
     &-item {
-      flex: 1 0 300px;
+      flex: 1 0 220px;
 
       &__img {
-        max-height: 400px;
+        max-height: 306px;
       }
 
       .teacher-info {
@@ -158,27 +163,11 @@
       margin-top: 40px;
 
       &__scrollbar {
-        width: 100%;
+        width: calc(100% + 20px);
       }
 
       &__buttons {
         display: none;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .teachers {
-    &__items {
-      margin-left: -5px;
-    }
-
-    &-item {
-      flex: 1 0 220px;
-
-      &__img {
-        max-height: 306px;
       }
     }
   }
