@@ -1,6 +1,10 @@
 @import './variables';
 
 .about {
+  &__anchor-target {
+    scroll-margin-top: 20px;
+  }
+
   &__desc {
     max-width: 891px;
     font-size: 30px;
