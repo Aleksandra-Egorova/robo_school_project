@@ -1,6 +1,10 @@
 @import './variables';
 
 .prices {
+  &__anchor-target {
+    scroll-margin-top: 20px;
+  }
+
   &__title {
     font-size: 50px;
   }
@@ -110,25 +114,21 @@
     &__cards {
       margin-top: 40px;
       gap: 30px;
-    }
-  }
-}
 
-@media screen and (max-width: 425px) {
-  .prices {
-    .card {
-      flex-basis: 300px;
-      padding: 40px 20px;
+      .card {
+        flex-basis: 300px;
+        padding: 40px 20px;
 
-      &__info {
-        margin-bottom: 40px;
+        &__info {
+          margin-bottom: 40px;
 
-        &__price {
-          margin-top: 40px;
-        }
+          &__price {
+            margin-top: 40px;
+          }
 
-        &__desc {
-          font-size: 16px;
+          &__desc {
+            font-size: 16px;
+          }
         }
       }
     }
