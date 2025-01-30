@@ -7,3 +7,4 @@ import './index.scss'
 import './scripts/slider';
 import './scripts/form';
 import './scripts/modal';
+import './scripts/burger_menu';

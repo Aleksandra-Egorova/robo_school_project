@@ -9,6 +9,7 @@ html {
   line-height: 1.6;
   color: $text-color-primary;
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 
 .body--noscroll {
@@ -23,6 +24,10 @@ h3 {
 
 section {
   padding: 120px 0;
+}
+
+.anchor-target {
+  scroll-margin-top: 20px;
 }
 
 .container {
@@ -99,5 +104,11 @@ footer {
         color: $button-color-primary;
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
   }
 }

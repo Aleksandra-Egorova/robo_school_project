@@ -1,6 +1,7 @@
 @import './variables';
 
 .about {
+  
   &__desc {
     max-width: 891px;
     font-size: 30px;
@@ -8,8 +9,8 @@
 
   &__items {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
     margin-top: 60px;
   }
@@ -17,18 +18,49 @@
   &__item {
     display: flex;
     flex-direction: column;
-    flex-basis: 260px; 
+    flex-basis: 260px;
 
     &-number {
       font-size: 70px;
       font-weight: 600;
       color: $text-color-accent;
-      white-space: nowrap; 
+      white-space: nowrap;
     }
 
     &-text {
       font-size: 18px;
       color: $text-color-secondary;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    padding: 60px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    &__desc {
+      font-size: 20px;
+    }
+
+    &__items {
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    &__item {
+      text-align: center;
+
+      &-number {
+        font-size: 60px;
+      }
+
+      &-text {
+        font-size: 16px;
+      }
     }
   }
 }

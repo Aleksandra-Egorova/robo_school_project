@@ -2,6 +2,7 @@
 
 .benefits {
   background-color: $bg-color-secondary;
+
   &__title {
     font-size: 50px;
     max-width: 682px;
@@ -29,6 +30,43 @@
       font-size: 18px;
       color: $text-color-secondary;
       margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .benefits {
+    padding: 60px 0;
+
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .benefits {
+    &__title {
+      font-size: 30px;
+      line-height: 1.4;
+    }
+
+    &__items {
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    &__item {
+      text-align: center;
+
+      &-subtitle {
+        font-size: 20px;
+      }
+
+      &-desc {
+        font-size: 16px;
+        margin-top: 10px;
+      }
     }
   }
 }
