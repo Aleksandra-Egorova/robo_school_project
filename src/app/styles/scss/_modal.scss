@@ -205,7 +205,7 @@
 
         &__btn {
           &--active {
-            display: block;
+            background-color: $button-color-dropdown;
           }
         }
       }
