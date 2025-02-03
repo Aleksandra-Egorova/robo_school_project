@@ -6,8 +6,9 @@ const tabsContent = document.querySelectorAll('.tabs-content__info');
 const dropdownArrow = document.querySelector('.dropdown-btn__arrow');
 let dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownMenu = document.querySelector('.dropdown-menu');
-const closeMobileModalBtn = document.querySelector('.modal__close-btn--mobile');
 const dropdownTabButtons = document.querySelectorAll('.dropdown-menu__btn');
+const dropdownBtnText = document.querySelector('.dropdown-btn__text');
+const modalContent = document.querySelector('.modal__content');
 
 const closeModal = () => {
   modal.classList.remove('modal--open');
@@ -20,6 +21,12 @@ const closeModal = () => {
   tabButtons.forEach((tabBtn) => {
     tabBtn.classList.remove('nav-tabs__btn--active');
   });
+
+  dropdownTabButtons.forEach((dropdownTabBtn) => {
+    dropdownTabBtn.classList.remove('dropdown-menu__btn--active');
+  });
+
+  dropdownBtnText.textContent = dropdownTabButtons[0].textContent;
 };
 
 const handleCloseModalClick = (event) => {
@@ -40,6 +47,7 @@ const openModal = () => {
 
   tabButtons[0].classList.add('nav-tabs__btn--active');
   tabsContent[0].classList.add('tabs-content__info--active');
+  dropdownTabButtons[0].classList.add('dropdown-menu__btn--active');
 };
 
 openModalBtns.forEach((button) => {
@@ -82,14 +90,12 @@ dropdownBtn.addEventListener('click', () => {
   if (
     dropdownArrow.classList.contains('dropdown-btn__arrow--open') &&
     dropdownMenu.classList.contains('dropdown-menu--open')
-  ) {
+  ) { 
     closeDropdown();
-  } else {
-    openDropdown();
-  };
-});
+  } 
 
-closeMobileModalBtn.addEventListener('click', closeModal);
+    openDropdown();
+});
 
 dropdownTabButtons.forEach((dropdownTabBtn) => {
   dropdownTabBtn.addEventListener('click', closeDropdown);
@@ -101,9 +107,14 @@ dropdownTabButtons.forEach((dropdownTabBtn) => {
       tab.classList.remove('tabs-content__info--active');
     });
 
-    const activeTabBtn = dropdownTabBtn;
-    const activeTabsContent = document.querySelector(`#${dropdownTabBtn.dataset.tab}`);
+    dropdownTabButtons.forEach((dropdownTabBtn) => {
+      dropdownTabBtn.classList.remove('dropdown-menu__btn--active');
+    });
 
+    const activeTabBtn = dropdownTabBtn;
+    activeTabBtn.classList.add('dropdown-menu__btn--active');
+
+    const activeTabsContent = document.querySelector(`#${dropdownTabBtn.dataset.tab}`);
     activeTabsContent.classList.add('tabs-content__info--active');
   });
 });
@@ -116,43 +127,7 @@ dropdownTabButtons.forEach((btn) => {
   });
 });
 
-//если элемент выбран, то он пропадает из списка дропдауна, и наоборт - если не выбран, то появляется:
-let displayButton = dropdownTabButtons[0];
-
-dropdownTabButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    if (displayButton) {
-      displayButton.style.display = 'block';
-    };
-
-    displayButton = button;
-    displayButton.style.display = 'none';
-  });
-});
-
-//для того чтобы вернуть дропдаун в дефолтное состояние
-const dropdownBtnText = document.querySelector('.dropdown-btn__text');
-
-const doDefaultDropdown = () => {
-  dropdownBtnText.textContent = dropdownTabButtons[0].textContent;
-
-  if (displayButton) {
-    displayButton.style.display = 'block';
-  };
-
-  displayButton = dropdownTabButtons[0];
-  displayButton.style.display = 'none';
-};
-
-openModalBtns.forEach((btn) => {
-  btn.addEventListener('click', doDefaultDropdown);
-});
-
-closeMobileModalBtn.addEventListener('click', doDefaultDropdown);
-
 // При клике вне селекта, если он открыт, он закрывается
-const modalContent = document.querySelector('.modal__content');
-
 const handleCLoseDropdownClick = (event) => {
   if (!event.target.closest('.dropdown')) {
     closeDropdown();
