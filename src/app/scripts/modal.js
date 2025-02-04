@@ -4,11 +4,12 @@ const modal = document.querySelector('.modal');
 const tabButtons = document.querySelectorAll('.nav-tabs__btn');
 const tabsContent = document.querySelectorAll('.tabs-content__info');
 const dropdownArrow = document.querySelector('.dropdown-btn__arrow');
-let dropdownBtn = document.querySelector('.dropdown-btn');
+const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 const dropdownTabButtons = document.querySelectorAll('.dropdown-menu__btn');
 const dropdownBtnText = document.querySelector('.dropdown-btn__text');
 const modalContent = document.querySelector('.modal__content');
+const textSpan = dropdownBtn.querySelector('.dropdown-btn__text');
 
 const closeModal = () => {
   modal.classList.remove('modal--open');
@@ -90,39 +91,50 @@ dropdownBtn.addEventListener('click', () => {
   if (
     dropdownArrow.classList.contains('dropdown-btn__arrow--open') &&
     dropdownMenu.classList.contains('dropdown-menu--open')
-  ) { 
-    closeDropdown();
-  } 
+  ) {
+    return;
+  };
 
-    openDropdown();
+  openDropdown();
 });
 
 dropdownTabButtons.forEach((dropdownTabBtn) => {
   dropdownTabBtn.addEventListener('click', closeDropdown);
 });
 
+const rermoveActiveTabsContent = (tabsContent) => {
+  tabsContent.forEach((tab) => {
+    tab.classList.remove('tabs-content__info--active');
+  });
+};
+
+const removeActiveButtons = (dropdownTabButtons) => {
+  dropdownTabButtons.forEach((dropdownTabBtn) => {
+    dropdownTabBtn.classList.remove('dropdown-menu__btn--active');
+  });
+};
+
+const addActiveButtons = (button) => {
+  button.classList.add('dropdown-menu__btn--active');
+};
+
+const addActiveTabsContent = (button) => {
+  const activeTabsContent = document.querySelector(`#${button.dataset.tab}`);
+  activeTabsContent.classList.add('tabs-content__info--active');
+};
+
 dropdownTabButtons.forEach((dropdownTabBtn) => {
   dropdownTabBtn.addEventListener('click', () => {
-    tabsContent.forEach((tab) => {
-      tab.classList.remove('tabs-content__info--active');
-    });
-
-    dropdownTabButtons.forEach((dropdownTabBtn) => {
-      dropdownTabBtn.classList.remove('dropdown-menu__btn--active');
-    });
-
-    const activeTabBtn = dropdownTabBtn;
-    activeTabBtn.classList.add('dropdown-menu__btn--active');
-
-    const activeTabsContent = document.querySelector(`#${dropdownTabBtn.dataset.tab}`);
-    activeTabsContent.classList.add('tabs-content__info--active');
+    rermoveActiveTabsContent(tabsContent);
+    removeActiveButtons(dropdownTabButtons);
+    addActiveButtons(dropdownTabBtn);
+    addActiveTabsContent(dropdownTabBtn);
   });
 });
 
 // Изменяем текст кнопки дропдауна на текст выбранного элемента
 dropdownTabButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    const textSpan = dropdownBtn.querySelector('.dropdown-btn__text');
     textSpan.textContent = btn.textContent;
   });
 });
@@ -131,7 +143,7 @@ dropdownTabButtons.forEach((btn) => {
 const handleCLoseDropdownClick = (event) => {
   if (!event.target.closest('.dropdown')) {
     closeDropdown();
-  };
+  }
 };
 
 modalContent.addEventListener('click', handleCLoseDropdownClick);
