@@ -152,7 +152,7 @@
       }
 
       .tabs-content {
-        max-height: calc(100vh - 200px);
+        height: auto;
 
         &__info {
           padding-bottom: 30px;
