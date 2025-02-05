@@ -153,9 +153,15 @@
 
       .tabs-content {
         height: auto;
+        max-height: unset;
+
+        &::after {
+          content: none;
+        }
+  
 
         &__info {
-          padding-bottom: 30px;
+          padding-bottom: 0;
         }
 
         &__text {
