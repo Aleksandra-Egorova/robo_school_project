@@ -306,6 +306,10 @@
       <div class="modal__content">
         <button class="modal__close-btn" aria-label="Закрыть модальное окно">
           <span class="modal__close-btn--desktop">Закрыть</span>
+          <svg class="modal__close-btn--mobile" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="1.05532" y1="-1.05532" x2="16.6082" y2="-1.05532" transform="matrix(0.681575 0.731748 -0.681575 0.731748 1 2)" stroke="#141024" stroke-width="2.11065" stroke-linecap="round"/>
+            <line x1="1.05532" y1="-1.05532" x2="16.6082" y2="-1.05532" transform="matrix(0.681575 -0.731748 0.681575 0.731748 1.96094 15)" stroke="#141024" stroke-width="2.11065" stroke-linecap="round"/>
+            </svg>            
         </button>
         <div class="teacher-modal">
           <div class="teacher-modal__block teacher-block">
@@ -336,6 +340,20 @@
               <button class="nav-tabs__btn" data-tab="tab-2">Опыт работы</button>
               <button class="nav-tabs__btn" data-tab="tab-3">Награды</button>
             </div>
+
+             <div class="teacher-tabs__dropdown dropdown">
+              <button class="dropdown__btn dropdown-btn mobile-btn">
+                <span class="dropdown-btn__text">Образование</span>
+                <svg class="dropdown-btn__arrow" width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.52875 4.92957C2.50458 4.90603 2.40125 4.81714 2.31625 4.73433C1.78167 4.24886 0.906667 2.98242 0.639583 2.31957C0.596667 2.21891 0.505833 1.9644 0.5 1.82842C0.5 1.69812 0.53 1.57392 0.590833 1.45539C0.675833 1.30764 0.809583 1.18911 0.9675 1.12417C1.07708 1.08236 1.405 1.01741 1.41083 1.01741C1.76958 0.952468 2.3525 0.916748 2.99667 0.916748C3.61042 0.916748 4.16958 0.952468 4.53375 1.00564C4.53958 1.01173 4.94708 1.07668 5.08667 1.14771C5.34167 1.27801 5.5 1.53251 5.5 1.80488V1.82842C5.49375 2.0058 5.33542 2.37884 5.32958 2.37884C5.06208 3.00597 4.23 4.24318 3.67708 4.74042C3.67708 4.74042 3.535 4.88046 3.44625 4.94135C3.31875 5.03633 3.16083 5.08341 3.00292 5.08341C2.82667 5.08341 2.6625 5.03024 2.52875 4.92957" fill="white"/>
+                  </svg>                  
+              </button>
+              <div class="dropdown-menu">
+                <button class="dropdown-menu__btn mobile-btn" data-tab="tab-1">Образование</button>
+                <button class="dropdown-menu__btn mobile-btn" data-tab="tab-2">Опыт работы</button>
+                <button class="dropdown-menu__btn mobile-btn" data-tab="tab-3">Награды</button>
+              </div>
+             </div>
 
             <div class="teacher-tabs__content tabs-content">
               <div class="tabs-content__info" id="tab-1">

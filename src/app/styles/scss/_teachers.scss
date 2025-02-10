@@ -23,7 +23,9 @@
   &-item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex: 1 0 360px;
+    gap: 20px;
 
     &__img {
       width: 100%;
@@ -38,23 +40,23 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+      flex-grow: 1;
 
       &__name {
         font-size: 24px;
         font-weight: 600;
-        margin-top: 20px;
       }
 
       &__post {
         font-size: 18px;
         color: $text-color-secondary;
-        margin-top: 10px;
+        margin-bottom: 20px;
       }
 
       &__more {
         font-size: 18px;
         color: $text-color-accent;
-        margin-top: 20px;
+        margin-top: auto;
       }
     }
   }
@@ -137,7 +139,7 @@
       flex: 1 0 220px;
 
       &__img {
-        max-height: 306px;
+        height: 306px;
       }
 
       .teacher-info {

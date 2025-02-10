@@ -104,11 +104,50 @@ footer {
         color: $button-color-primary;
       }
     }
+
+    &--mobile {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    &__content {
+      width: 90vw;
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 10px;
+  }
+
+  .modal {
+    padding: 0;
+
+    &__content {
+      width: 100%;
+      height: 100%;
+      padding: 30px 20px;
+      border-radius: 0;
+      overflow-y: auto;
+    }
+
+    &__close-btn {
+      right: 10px;
+      top: 10px;
+
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }

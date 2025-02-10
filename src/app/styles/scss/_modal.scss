@@ -74,7 +74,7 @@
       &::after {
         position: absolute;
         content: '';
-        width: 100%;
+        width: 98%;
         height: 32px;
         bottom: 0;
         left: 0;
@@ -98,6 +98,132 @@
       &__title {
         font-size: 24px;
         margin: 40px 0 20px 0;
+      }
+    }
+  }
+
+  .dropdown {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .teacher-modal {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .teacher-modal {
+    .teacher-block {
+      gap: 10px;
+
+      &__img {
+        width: 60px;
+        height: 88px;
+      }
+
+      .teacher-info {
+        gap: 5px;
+
+        &__name {
+          font-size: 16px;
+        }
+
+        &__post {
+          font-size: 12px;
+        }
+
+        &__socials {
+          margin-top: 5px;
+          gap: 5px;
+        }
+      }
+    }
+
+    .teacher-tabs {
+      .nav-tabs {
+        display: none;
+
+        &__btn {
+          display: none;
+        }
+      }
+
+      .tabs-content {
+        height: auto;
+        max-height: unset;
+
+        &::after {
+          content: none;
+        }
+  
+
+        &__info {
+          padding-bottom: 0;
+        }
+
+        &__text {
+          font-size: 14px;
+        }
+
+        &__title {
+          font-size: 16px;
+          margin: 20px 0 10px 0;
+        }
+      }
+    }
+
+    .dropdown {
+      display: flex;
+      position: relative;
+
+      &-btn {
+        background-color: $accent-color;
+        width: 100%;
+
+        &__arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: 5px;
+          width: 10px;
+          height: 10px;
+
+          &--open {
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+      }
+
+      &-menu {
+        display: none;
+
+        &--open {
+          position: absolute;
+          background-color: $accent-color;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          top: 100%;
+        }
+
+        &__btn {
+          &--active {
+            background-color: $button-color-dropdown;
+          }
+        }
+      }
+
+      .mobile-btn {
+        padding: 10px;
+        border: 1px solid $white-color;
+        color: $white-color;
+      }
+
+      .btn--close {
+        display: none;
       }
     }
   }
